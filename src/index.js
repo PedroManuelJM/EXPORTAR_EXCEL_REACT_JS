@@ -2,12 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.css';
+import { HashRouter, Route, Switch } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
+
   <React.StrictMode>
-    <App />
+    <HashRouter  basename={process.env.PUBLIC_URL + "/"}>
+      <Switch>
+        <Route exact path="/" component={App}/>
+      </Switch>
+    </HashRouter  >
   </React.StrictMode>,
+
   document.getElementById('root')
 );
 
